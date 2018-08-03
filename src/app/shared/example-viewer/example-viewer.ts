@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {ComponentPortal} from '@angular/cdk/portal';
 
-import {EXAMPLE_COMPONENTS, LiveExample} from '@angular/material-examples';
 import {CopierService} from '../copier/copier.service';
 
 
@@ -18,14 +17,15 @@ export class ExampleViewer {
   /** String key of the currently displayed example. */
   _example: string;
 
-  exampleData: LiveExample;
+  exampleData: any;
 
   /** Whether the source for the example is being displayed. */
   showSource = false;
 
   constructor(
     private snackbar: MatSnackBar,
-    private copier: CopierService) { }
+    private copier: CopierService) {
+  }
 
   get example() {
     return this._example;
@@ -33,9 +33,9 @@ export class ExampleViewer {
 
   @Input()
   set example(example: string) {
-    if (example && EXAMPLE_COMPONENTS[example]) {
+    if (example) {
       this._example = example;
-      this.exampleData = EXAMPLE_COMPONENTS[example];
+      this.exampleData = [];
       this.selectedPortal = new ComponentPortal(this.exampleData.component);
     } else {
       console.log('MISSING EXAMPLE: ', example);

@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {VERSION} from '@angular/material';
-import {ExampleData} from '@angular/material-examples';
+// import {ExampleData} from '@angular/material-examples';
 
 import {materialVersion} from '../version/version';
 
@@ -73,7 +73,7 @@ export class StackblitzWriter {
    * Returns an HTMLFormElement that will open a new stackblitz template with the example data when
    * called with submit().
    */
-  constructStackblitzForm(data: ExampleData): Promise<HTMLFormElement> {
+  constructStackblitzForm(data: any): Promise<HTMLFormElement> {
     const indexFile = `app%2F${data.indexFilename}.ts`;
     const form = this._createFormElement(indexFile);
 
@@ -127,7 +127,7 @@ export class StackblitzWriter {
    * @param prependApp whether to prepend the 'app' prefix to the path
    */
   _readFile(form: HTMLFormElement,
-            data: ExampleData,
+            data: any,
             filename: string,
             path: string,
             prependApp = true): void {
@@ -147,7 +147,7 @@ export class StackblitzWriter {
    * @param prependApp whether to prepend the 'app' prefix to the path
    */
   _addFileToForm(form: HTMLFormElement,
-                 data: ExampleData,
+                 data: any,
                  content: string,
                  filename: string,
                  path: string,
@@ -166,7 +166,7 @@ export class StackblitzWriter {
    * This will replace those placeholders with the names from the example metadata,
    * e.g. "<basic-button-example>" and "BasicButtonExample"
    */
-  _replaceExamplePlaceholderNames(data: ExampleData,
+  _replaceExamplePlaceholderNames(data: any,
                                   fileName: string,
                                   fileContent: string): string {
     if (fileName == 'index.html') {

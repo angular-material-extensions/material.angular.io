@@ -1,12 +1,11 @@
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {async, fakeAsync, flushMicrotasks, inject, TestBed} from '@angular/core/testing';
-import {ExampleData} from '@angular/material-examples';
 import {StackblitzWriter} from './stackblitz-writer';
 
 
 describe('StackblitzWriter', () => {
   let stackblitzWriter: StackblitzWriter;
-  let data: ExampleData;
+  let data: any;
   let http: HttpTestingController;
 
   beforeEach(async(() => {
@@ -25,7 +24,7 @@ describe('StackblitzWriter', () => {
 
   beforeEach(() => {
     stackblitzWriter = TestBed.get(StackblitzWriter);
-    data = new ExampleData('');
+    data = null;
     data.examplePath = 'http://material.angular.io/';
     data.exampleFiles = ['test.ts', 'test.html', 'src/detail.ts'];
   });

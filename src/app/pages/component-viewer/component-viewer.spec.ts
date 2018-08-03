@@ -4,7 +4,7 @@ import {of as observableOf} from 'rxjs';
 import {ComponentViewer, ComponentViewerModule} from './component-viewer';
 import {DocsAppTestingModule} from '../../testing/testing-module';
 
-import {EXAMPLE_COMPONENTS} from '@angular/material-examples';
+// import {EXAMPLE_COMPONENTS} from '@angular/material-examples';
 import {MatButtonModule, MatIconModule} from '@angular/material';
 import {NgModule} from '@angular/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -54,7 +54,7 @@ describe('ComponentViewer', () => {
     MatIconModule,
     NoopAnimationsModule,
   ],
-  declarations: [EXAMPLE_COMPONENTS[exampleKey].component],
-  entryComponents: [EXAMPLE_COMPONENTS[exampleKey].component],
+  declarations: [],
+  entryComponents: [],
 })
 class TestExampleModule { }

@@ -1,6 +1,5 @@
 import {Component, Input, NgModule} from '@angular/core';
 import {StackblitzWriter} from './stackblitz-writer';
-import {ExampleData} from '@angular/material-examples';
 import {MatButtonModule, MatIconModule, MatTooltipModule} from '@angular/material';
 
 @Component({
@@ -23,7 +22,7 @@ export class StackblitzButton {
 
   @Input()
   set example(example: string) {
-    const exampleData = new ExampleData(example);
+    const exampleData = null;
 
     if (example) {
       this.stackblitzWriter.constructStackblitzForm(exampleData).then(stackblitzForm => {
