@@ -15,14 +15,13 @@ export interface DocCategory {
 }
 
 const CDK = 'cdk';
-const COMPONENTS = 'components';
+const COMPONENTS = 'extensions';
 export const SECTIONS = {
-  [COMPONENTS]: 'Components',
-  [CDK]: 'CDK',
+  [COMPONENTS]: 'Extensions',
 };
 
 
-const DOCS: {[key: string]: DocCategory[]} = {
+const DOCS: { [key: string]: DocCategory[] } = {
   [COMPONENTS]: [
     {
       id: 'forms',
@@ -148,12 +147,15 @@ const DOCS: {[key: string]: DocCategory[]} = {
       items: [
         {id: 'card', name: 'Card', examples: ['card-fancy']},
         {id: 'divider', name: 'Divider', examples: ['divider-overview']},
-        {id: 'expansion', name: 'Expansion Panel',
-            examples: ['expansion-overview', 'expansion-steps']},
+        {
+          id: 'expansion', name: 'Expansion Panel',
+          examples: ['expansion-overview', 'expansion-steps']
+        },
         {id: 'grid-list', name: 'Grid list', examples: ['grid-list-dynamic']},
         {id: 'list', name: 'List', examples: ['list-sections']},
         {id: 'stepper', name: 'Stepper', examples: ['stepper-overview']},
-        {id: 'tabs', name: 'Tabs', examples: [
+        {
+          id: 'tabs', name: 'Tabs', examples: [
             'tab-group-basic',
             'tab-group-custom-label',
             'tab-group-dynamic-height',
@@ -164,14 +166,17 @@ const DOCS: {[key: string]: DocCategory[]} = {
             'tab-group-theme',
             'tab-group-async',
             'tab-nav-bar-basic',
-          ]},
-        {id: 'tree', name: 'Tree', examples: [
-          'tree-dynamic',
-          'tree-flat-overview',
-          'tree-checklist',
-          'tree-nested-overview',
-          'tree-loadmore',
-        ]},
+          ]
+        },
+        {
+          id: 'tree', name: 'Tree', examples: [
+            'tree-dynamic',
+            'tree-flat-overview',
+            'tree-checklist',
+            'tree-nested-overview',
+            'tree-loadmore',
+          ]
+        },
       ]
     },
     {
@@ -183,8 +188,10 @@ const DOCS: {[key: string]: DocCategory[]} = {
         {id: 'badge', name: 'Badge', examples: ['badge-overview']},
         {id: 'chips', name: 'Chips', examples: ['chips-stacked']},
         {id: 'icon', name: 'Icon', examples: ['icon-svg']},
-        {id: 'progress-spinner', name: 'Progress spinner',
-            examples: ['progress-spinner-configurable']},
+        {
+          id: 'progress-spinner', name: 'Progress spinner',
+          examples: ['progress-spinner-configurable']
+        },
         {id: 'progress-bar', name: 'Progress bar', examples: ['progress-bar-configurable']},
       ]
     },
@@ -195,7 +202,8 @@ const DOCS: {[key: string]: DocCategory[]} = {
         {id: 'bottom-sheet', name: 'Bottom Sheet', examples: ['bottom-sheet-overview']},
         {id: 'dialog', name: 'Dialog', examples: ['dialog-overview']},
         {id: 'snack-bar', name: 'Snackbar', examples: ['snack-bar-component']},
-        {id: 'tooltip', name: 'Tooltip', examples: [
+        {
+          id: 'tooltip', name: 'Tooltip', examples: [
             'tooltip-overview',
             'tooltip-position',
             'tooltip-custom-class',
@@ -205,7 +213,8 @@ const DOCS: {[key: string]: DocCategory[]} = {
             'tooltip-message',
             'tooltip-modified-defaults',
             'tooltip-auto-hide',
-          ]},
+          ]
+        },
       ]
     },
     {
@@ -214,7 +223,8 @@ const DOCS: {[key: string]: DocCategory[]} = {
       items: [
         {id: 'paginator', name: 'Paginator', examples: ['paginator-configurable']},
         {id: 'sort', name: 'Sort header', examples: ['sort-overview']},
-        {id: 'table', name: 'Table', examples: [
+        {
+          id: 'table', name: 'Table', examples: [
             'table-basic',
             'table-basic-flex',
             'table-dynamic-columns',
@@ -233,11 +243,12 @@ const DOCS: {[key: string]: DocCategory[]} = {
             // 'table-sticky-column',
             // 'table-sticky-footer',
             // 'table-sticky-header',
-        ]},
+          ]
+        },
       ]
     }
   ],
-  [CDK] : [
+  [CDK]: [
     {
       id: 'component-composition',
       name: 'Common Behaviors',

@@ -8,16 +8,19 @@ import {Title} from '@angular/platform-browser';
 export class ComponentPageTitle {
   _title = '';
 
-  get title(): string { return this._title; }
+  get title(): string {
+    return this._title;
+  }
 
   set title(title: string) {
     this._title = title;
     if (title !== '') {
       title = `${title} | `;
     }
-    this.bodyTitle.setTitle(`${title}Angular Material`);
+    this.bodyTitle.setTitle(`${title}Angular Material Extensions`);
   }
 
-  constructor(private bodyTitle: Title) { }
+  constructor(private bodyTitle: Title) {
+  }
 
 }
