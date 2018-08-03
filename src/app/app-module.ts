@@ -23,10 +23,7 @@ import {ThemePickerModule} from './shared/theme-picker/theme-picker';
 import {StackblitzButtonModule} from './shared/stackblitz/stackblitz-button';
 import {NavBarModule} from './shared/navbar/navbar';
 import {ThemeStorage} from './shared/theme-picker/theme-storage/theme-storage';
-import {GuideItems} from './shared/guide-items/guide-items';
 import {DocumentationItems} from './shared/documentation-items/documentation-items';
-import {GuideListModule} from './pages/guide-list/guide-list';
-import {GuideViewerModule} from './pages/guide-viewer/guide-viewer';
 import {DocViewerModule} from './shared/doc-viewer/doc-viewer-module';
 import {
   CanActivateComponentSidenav
@@ -53,8 +50,6 @@ import {GaService} from './shared/ga/ga';
     ComponentViewerModule,
     DocViewerModule,
     FooterModule,
-    GuideListModule,
-    GuideViewerModule,
     HomepageModule,
     NavBarModule,
     StackblitzButtonModule,
@@ -66,7 +61,6 @@ import {GaService} from './shared/ga/ga';
     ComponentPageTitle,
     DocumentationItems,
     GaService,
-    GuideItems,
     StyleManager,
     ThemeStorage,
     CanActivateComponentSidenav,
@@ -74,4 +68,5 @@ import {GaService} from './shared/ga/ga';
   ],
   bootstrap: [MaterialDocsApp],
 })
-export class AppModule {}
+export class AppModule {
+}
