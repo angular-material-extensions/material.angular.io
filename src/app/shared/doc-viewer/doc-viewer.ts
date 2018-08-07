@@ -42,7 +42,8 @@ export class DocViewer implements OnDestroy {
               private _http: HttpClient,
               private _injector: Injector,
               private _viewContainerRef: ViewContainerRef,
-              private _router: Router) {}
+              private _router: Router) {
+  }
 
   /** Fetch a document by URL. */
   private _fetchDocument(url: string) {
@@ -89,12 +90,12 @@ export class DocViewer implements OnDestroy {
   /** Instantiate a ExampleViewer for each example. */
   private _loadComponents(componentName: string, componentClass: any) {
     let exampleElements =
-        this._elementRef.nativeElement.querySelectorAll(`[${componentName}]`);
+      this._elementRef.nativeElement.querySelectorAll(`[${componentName}]`);
 
     Array.prototype.slice.call(exampleElements).forEach((element: Element) => {
       let example = element.getAttribute(componentName);
       let portalHost = new DomPortalHost(
-          element, this._componentFactoryResolver, this._appRef, this._injector);
+        element, this._componentFactoryResolver, this._appRef, this._injector);
       let examplePortal = new ComponentPortal(componentClass, this._viewContainerRef);
       let exampleViewer = portalHost.attach(examplePortal);
       (exampleViewer.instance as ExampleViewer).example = example;

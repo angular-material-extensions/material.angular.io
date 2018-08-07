@@ -25,6 +25,7 @@ export class StackblitzButton {
     const exampleData = null;
 
     if (example) {
+      console.log('stackblitz button - exampleData: ', exampleData);
       this.stackblitzWriter.constructStackblitzForm(exampleData).then(stackblitzForm => {
         this.stackblitzForm = stackblitzForm;
         this.isDisabled = false;
@@ -34,7 +35,8 @@ export class StackblitzButton {
     }
   }
 
-  constructor(private stackblitzWriter: StackblitzWriter) {}
+  constructor(private stackblitzWriter: StackblitzWriter) {
+  }
 
   openStackblitz(): void {
     // When the form is submitted, it must be in the document body. The standard of forms is not
@@ -53,4 +55,5 @@ export class StackblitzButton {
   declarations: [StackblitzButton],
   providers: [StackblitzWriter],
 })
-export class StackblitzButtonModule {}
+export class StackblitzButtonModule {
+}

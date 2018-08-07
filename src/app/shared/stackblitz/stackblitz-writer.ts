@@ -67,13 +67,17 @@ const dependencies = {
  */
 @Injectable()
 export class StackblitzWriter {
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) {
+  }
 
   /**
    * Returns an HTMLFormElement that will open a new stackblitz template with the example data when
    * called with submit().
    */
   constructStackblitzForm(data: any): Promise<HTMLFormElement> {
+
+    console.log('constructStackblitzForm: ', data);
+
     const indexFile = `app%2F${data.indexFilename}.ts`;
     const form = this._createFormElement(indexFile);
 
@@ -84,10 +88,10 @@ export class StackblitzWriter {
 
     return new Promise(resolve => {
       let templateContents = TEMPLATE_FILES
-          .map(file => this._readFile(form, data, file, TEMPLATE_PATH));
+        .map(file => this._readFile(form, data, file, TEMPLATE_PATH));
 
       let exampleContents = data.exampleFiles
-          .map(file => this._readFile(form, data, file, data.examplePath));
+        .map(file => this._readFile(form, data, file, data.examplePath));
 
       // TODO(josephperrott): Prevent including assets to be manually checked.
       if (data.selectorName === 'icon-svg-example') {
@@ -183,23 +187,22 @@ export class StackblitzWriter {
 
       // Replace `declarations: [MaterialDocsExample]`
       // will be replaced as `declarations: [ButtonDemo]`
-      fileContent = fileContent.
-        replace(/declarations: \[MaterialDocsExample\]/g,
-          `declarations: [${data.componentName}]`);
+      fileContent = fileContent.replace(/declarations: \[MaterialDocsExample\]/g,
+        `declarations: [${data.componentName}]`);
 
       // Replace `entryComponents: [MaterialDocsExample]`
       // will be replaced as `entryComponents: [DialogContent]`
-      fileContent = fileContent.
-        replace(/entryComponents: \[MaterialDocsExample\]/g,
-          `entryComponents: [${data.componentName}]`);
+      fileContent = fileContent.replace(/entryComponents: \[MaterialDocsExample\]/g,
+        `entryComponents: [${data.componentName}]`);
 
       // Replace `bootstrap: [MaterialDocsExample]`
       // will be replaced as `bootstrap: [ButtonDemo]`
       // This assumes the first component listed in the main component
       const componentList = (data.componentName || '').split(',')[0];
-      fileContent = fileContent.
-        replace(/bootstrap: \[MaterialDocsExample\]/g,
-          `bootstrap: [${componentList}]`);
+      fileContent = fileContent.replace(/bootstrap: \[MaterialDocsExample\]/g,
+        `bootstrap: [${componentList}]`);
+
+      console.log('stackblitz write: ', data, data.indexFilename);
 
       fileContent = fileContent.replace(/material-docs-example/g, data.indexFilename);
     }
