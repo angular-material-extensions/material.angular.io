@@ -4,6 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "deploy:firebase": "npm run prod-build && firebase deploy",
     "start": "npm run build-themes && ng serve",
     "start-jit": "npm run build-themes && ng serve --aot=false",
     "lint": "tslint -p src/tsconfig.json",

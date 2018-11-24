@@ -1,20 +1,38 @@
-<div class="docs-api"><h2>API reference for Angular Material password strength</h2>
-  <pre class="docs-markdown-pre"><code class="lang-bash docs-markdown-code">npm install --save @angular-material-extensions/password-strength</code></pre>
-  <p class="docs-api-module-import"><code>import {MatPasswordStrengthModule} from
-    '@angular-material-extensions/password-strength;</code>
+<div class="docs-api"><h2>API reference for Angular Material Link Preview</h2>
+  <pre class="docs-markdown-pre"><code class="lang-bash docs-markdown-code">npm install --save @angular-material-extensions/link-preview</code></pre>
+  <p class="docs-api-module-import"><code>import {MatLinkPreviewModule} from
+    '@angular-material-extensions/link-preview;</code>
   </p>
+
   <h3 id="directives" class="docs-header-link docs-api-h3"><span header-link="directives"></span> Directives</h3>
-  <h4 id="MatProgressBar" class="docs-header-link docs-api-h4 docs-api-class-name"><span
-    header-link="MatProgressBar"></span> <code>MatPasswordStrengthComponent</code>
+  <h4 id="MatLinkPreviewDirective" class="docs-header-link docs-api-h4 docs-api-class-name"><span
+    header-link="MatLinkPreviewDirective"></span> <code>MatLinkPreviewDirective</code>
   </h4>
   <p class="docs-api-class-description"></p>
-  <p><code>&lt;mat-password-strength&gt;</code> component.</p>
+  <p><code>matLinkPreview&gt;</code> directive.</p>
+
+
+  <p class="docs-api-directive-selectors">
+    <span class="docs-api-class-selector-label">Selector:</span>
+    <span class="docs-api-class-selector-name">matLinkPreview</span></p><span class="docs-api-class-export-label">Exported as:</span>
+  <span class="docs-api-class-export-name">matLinkPreview</span>
+
+  <h3 id="components" class="docs-header-link docs-api-h3"><span header-link="components"></span> Components</h3>
+
+  <h4 id="MatLinkPreviewContainerComponent" class="docs-header-link docs-api-h4 docs-api-class-name"><span
+    header-link="MatLinkPreviewContainerComponent"></span> <code>MatLinkPreviewContainerComponent</code>
+  </h4>
+  <p class="docs-api-class-description"></p>
+  <p><code>&lt;mat-link-preview-container&gt;</code> component.</p>
   <p></p>
   <p class="docs-api-directive-selectors">
     <span class="docs-api-class-selector-label">Selector:</span>
-    <span class="docs-api-class-selector-name">mat-progress-bar</span></p><span class="docs-api-class-export-label">Exported as:</span>
-  <span class="docs-api-class-export-name">matPasswordStrength</span><h5 class="docs-api-h5 docs-api-method-header">
-    Properties</h5>
+    <span class="docs-api-class-selector-name">mat-link-preview-container</span></p>
+  <span class="docs-api-class-export-label">Exported as:</span>
+  <span class="docs-api-class-export-name">matLinkPreviewContainer</span>
+  <h5 class="docs-api-h5 docs-api-method-header">
+    Properties
+  </h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
       <th class="docs-api-properties-th">Name</th>
@@ -23,102 +41,41 @@
     <tr class="docs-api-properties-row">
       <td class="docs-api-properties-name-cell">
         <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>password: string</code></p></td>
-      <td class="docs-api-property-description"><p>the password to calculate its strength</p></td>
+        <p class="docs-api-property-name"><code>color: string</code></p></td>
+      <td class="docs-api-property-description"><p>The theme color used for the component | default = <span
+        class="hljs-string">primary</span></p></td>
     </tr>
     <tr class="docs-api-properties-row">
       <td class="docs-api-properties-name-cell">
         <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>min: number</code></p></td>
-      <td class="docs-api-property-description"><p>the minimum length of the password (needed for validation) | default
-        = <span
-          class="hljs-string">8</span></p></td>
+        <p class="docs-api-property-name"><code>multiple: boolean</code></p></td>
+      <td class="docs-api-property-description"><p>Whether to render only the first found link | default = <span
+        class="hljs-string">false</span></p></td>
     </tr>
     <tr class="docs-api-properties-row">
       <td class="docs-api-properties-name-cell">
         <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>max: number</code></p></td>
-      <td class="docs-api-property-description"><p>the maximum length of the password (needed for validation) | default
-        = <span
-          class="hljs-string">30</span></p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>enableLengthRule: boolean</code></p></td>
-      <td class="docs-api-property-description"><p>whether the password's length should be validated | default = <span
-        class="hljs-string">true</span></p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>enableLowerCaseLetterRule: boolean</code></p></td>
-      <td class="docs-api-property-description"><p>whether the password should contain a lower case letter | default =
-        <span
-          class="hljs-string">true</span>
-      </p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>enableUpperCaseLetterRule: boolean</code></p></td>
-      <td class="docs-api-property-description"><p>whether the password should contain an upper case letter | default =
-        <span
+        <p class="docs-api-property-name"><code>showLoadingsProgress: boolean</code></p></td>
+      <td class="docs-api-property-description"><p>Whether to show a loading progress spinner while fetching a link |
+        default = <span
           class="hljs-string">true</span></p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>enableDigitRule: boolean</code></p></td>
-      <td class="docs-api-property-description"><p>whether the password should a digit char | default =
-        <span
-          class="hljs-string">true</span></p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>enableSpecialCharRule: boolean</code></p></td>
-      <td class="docs-api-property-description"><p>whether the password should a special char | default =
-        <span
-          class="hljs-string">true</span></p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>externalError: boolean</code></p></td>
-      <td class="docs-api-property-description"><p>used to change the color of the password to warn if an external error
-        occurs</p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>validators: Criteria[]</code></p></td>
-      <td class="docs-api-property-description"><p>user to define the validation rules (see the default values in the
-        src files)</p></td>
-    </tr>
-    <tr class="docs-api-properties-row">
-      <td class="docs-api-properties-name-cell">
-        <div class="docs-api-input-marker">@Output()</div>
-        <p class="docs-api-property-name"><code>onStrengthChanged: EventEmitter <<span
-          class="hljs-string">number</span>>
-        </code></p>
-      </td>
-      <td class="docs-api-property-description"><p>emits the strength of the provided password in % e.g: 20%, 40%, 60%,
-        80% or 100%</p></td>
     </tr>
   </table>
 
-  <h4 id="MatPasswordStrengthInfoComponent" class="docs-header-link docs-api-h4 docs-api-class-name"><span
-    header-link="MatProgressBar"></span> <code>MatPasswordStrengthInfoComponent</code>
+  <h4 id="MatLinkPreviewComponent" class="docs-header-link docs-api-h4 docs-api-class-name"><span
+    header-link="MatLinkPreviewComponent"></span> <code>MatLinkPreviewComponent</code>
   </h4>
   <p class="docs-api-class-description"></p>
-  <p><code>&lt;mat-password-strength&gt;</code> component.</p>
+  <p><code>&lt;mat-link-preview&gt;</code> component.</p>
   <p></p>
   <p class="docs-api-directive-selectors">
     <span class="docs-api-class-selector-label">Selector:</span>
-    <span class="docs-api-class-selector-name">mat-progress-bar</span></p><span class="docs-api-class-export-label">Exported as:</span>
-  <span class="docs-api-class-export-name">matPasswordStrengthInfo</span><h5 class="docs-api-h5 docs-api-method-header">
-    Properties</h5>
+    <span class="docs-api-class-selector-name">mat-link-preview-container</span></p>
+  <span class="docs-api-class-export-label">Exported as:</span>
+  <span class="docs-api-class-export-name">matLinkPreviewContainer</span>
+  <h5 class="docs-api-h5 docs-api-method-header">
+    Properties
+  </h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
       <th class="docs-api-properties-th">Name</th>
@@ -127,8 +84,29 @@
     <tr class="docs-api-properties-row">
       <td class="docs-api-properties-name-cell">
         <div class="docs-api-input-marker">@Input()</div>
-        <p class="docs-api-property-name"><code>passwordComponent: MatPasswordStrengthComponent</code></p></td>
-      <td class="docs-api-property-description"><p>The password component to extract its information.</p></td>
+        <p class="docs-api-property-name"><code>link: Link</code></p></td>
+      <td class="docs-api-property-description"><p>The link to fetch</p></td>
+    </tr>
+    <tr class="docs-api-properties-row">
+      <td class="docs-api-properties-name-cell">
+        <div class="docs-api-input-marker">@Input()</div>
+        <p class="docs-api-property-name"><code>linkPreview: LinkPreview</code></p></td>
+      <td class="docs-api-property-description"><p>The response from fetching the link</p></td>
+    </tr>
+    <tr class="docs-api-properties-row">
+      <td class="docs-api-properties-name-cell">
+        <div class="docs-api-input-marker">@Input()</div>
+        <p class="docs-api-property-name"><code>color: string</code></p></td>
+      <td class="docs-api-property-description"><p>The theme color used for the component | default = <span
+        class="hljs-string">primary</span></p></td>
+    </tr>
+    <tr class="docs-api-properties-row">
+      <td class="docs-api-properties-name-cell">
+        <div class="docs-api-input-marker">@Input()</div>
+        <p class="docs-api-property-name"><code>showLoadingsProgress: boolean</code></p></td>
+      <td class="docs-api-property-description"><p>Whether to show a loading progress spinner while fetching a link |
+        default = <span
+          class="hljs-string">true</span></p></td>
     </tr>
   </table>
 </div>

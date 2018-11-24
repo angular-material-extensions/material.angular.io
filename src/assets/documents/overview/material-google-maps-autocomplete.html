@@ -8,68 +8,22 @@
   </h3>
 
   <p>
-    <code class="docs-markdown-code">matLinkPreview</code>
-    is an Angular directive that aims to find and parse links from any html input element. These links will be emitted
-    via <code class="docs-markdown-code">MatLinkPreviewService</code> so that the <code class="docs-markdown-code">MatLinkPreviewContainerComponent</code>
-    (see below in the components section) can retrieve and fetch them to render.
-  </p>
-
-  <h3 id="components" class="docs-header-link docs-markdown-h3"><span header-linkheader-link="components"></span>
-    Components
-  </h3>
-
-  <h4
-    id="matLinkPreview" class="docs-header-link docs-markdown-h4"><span
-    header-link="matLinkPreview"></span>
-    matLinkPreviewContainer
-  </h4>
-
-  <p>
-    <code class="docs-markdown-code">&lt;mat-link-preview-container&gt;</code>
-    is an Angular UI component built on the top of the material card to illustrate a preview of a fetched link/url
+    <code class="docs-markdown-code">&lt;mat-google-maps-autocomplete&gt;</code>
+    is an Angular UI component built on the top of the material input component that deals with the google maps
+    autocomplete API
   </p>
 
   <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code"><span class="hljs-tag">&lt;<span
-    class="hljs-name">mat-link-preview-container</span><span class="hljs-attr"> [multiple]</span>=<span
-    class="hljs-string">"true"</span>><span class="hljs-tag">&lt;/<span
-    class="hljs-name">mat-link-preview-container</span>&gt;</span></span></code></pre>
+    class="hljs-name">mat-google-maps-autocomplete</span>
+    <span class="hljs-attr"> [appearance]</span>=<span class="hljs-string">"outline"</span>
+    <span class="hljs-attr"> country</span>=<span class="hljs-string">"us"</span>
+    <span class="hljs-attr"> type</span>=<span class="hljs-string">"address"</span>
+    <span class="hljs-attr"> (onAddressSelected)</span>=<span class="hljs-string">"onAddressSelected($event)"</span>
+    <span class="hljs-attr"> (onLocationSelected)</span>=<span
+      class="hljs-string">"onLocationSelected($event)"</span>><span class="hljs-tag">&lt;/<span
+      class="hljs-name">mat-google-maps-autocomplete</span>&gt;</span></span></code></pre>
 
-  <p class="docs-markdown-p">This component is usually used in combination with an input html element that contains some
-    links.</p>
-
-
-  <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code">
-    <span class="hljs-tag">&lt;<span class="hljs-name">mat-form-field</span>
-    <span class="hljs-attr"> appearance</span>=<span class="hljs-string">"outline"</span>>
-    <span class="hljs-tag">&lt;<span class="hljs-name">mat-label</span>>Enter here your text here with few links to preview ;)<span
-      class="hljs-tag">&lt;<span
-      class="hljs-name">mat-label</span>&gt;</span></span>
-
-      <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>
-        <span class="hljs-attr"> matInput</span>
-        <span class="hljs-attr"> matTextareaAutosize</span>
-        <span class="hljs-attr"> matLinkPreview</span>
-        <span class="hljs-attr"> minRows</span>=<span class="hljs-string">"6"</span>>&lt;/<span
-          class="hljs-name">text-area</span>&gt;</span></span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">mat-link-preview-container</span><span
-      class="hljs-attr"> [multiple]</span>=<span class="hljs-string">"true"</span>><span class="hljs-tag">&lt;/<span
-      class="hljs-name">mat-link-preview-container</span>&gt;</span></span>
-
-    <span class="hljs-tag">&lt;/<span class="hljs-name">mat-form-field</span>&gt;</span>
-
-  </code></pre>
-
-  <h4
-    id="matLinkPreviewContainer" class="docs-header-link docs-markdown-h4"><span
-    header-link="matLinkPreviewContainer"></span>
-    matLinkPreview
-  </h4>
-
-  <p>
-    <code class="docs-markdown-code">&lt;mat-link-preview&gt;</code>
-    is an Angular UI component that render one single link preview. Used by the <code class="docs-markdown-code">&lt;mat-link-preview-container&gt;</code>
-    and can be used also as standalone!
+  <p class="docs-markdown-p">This component can be used as standalone element
   </p>
 
 

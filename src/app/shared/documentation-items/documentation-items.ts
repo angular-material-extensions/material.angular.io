@@ -28,24 +28,30 @@ const DOCS: { [key: string]: DocCategory[] } = {
       name: 'UI Components',
       items: [
         // {id: 'checkbox', name: 'Checkbox', examples: ['checkbox-configurable']},
-        {id: 'password-strength', name: 'password-strength', examples: ['checkbox-configurable']},
+        {id: 'password-strength', name: 'Password Strength', examples: ['checkbox-configurable']},
+        {id: 'link-preview', name: 'Link Preview', examples: ['checkbox-configurable']},
+        {
+          id: 'google-maps-autocomplete',
+          name: 'Google Maps Autocomplete',
+          examples: ['checkbox-configurable']
+        },
       ]
     },
-    {
-      id: 'layout',
-      name: 'Layout',
-      items: [
-        {id: 'card', name: 'Card', examples: ['card-fancy']},
-      ]
-    },
-    {
-      id: 'modals',
-      name: 'Popups & Modals',
-      items: [
-        {id: 'bottom-sheet', name: 'Bottom Sheet', examples: ['bottom-sheet-overview']},
-        {id: 'dialog', name: 'Dialog', examples: ['dialog-overview']},
-      ]
-    },
+    // {
+    //   id: 'layout',
+    //   name: 'Layout',
+    //   items: [
+    //     {id: 'card', name: 'Card', examples: ['card-fancy']},
+    //   ]
+    // },
+    // {
+    //   id: 'modals',
+    //   name: 'Popups & Modals',
+    //   items: [
+    //     {id: 'bottom-sheet', name: 'Bottom Sheet', examples: ['bottom-sheet-overview']},
+    //     {id: 'dialog', name: 'Dialog', examples: ['dialog-overview']},
+    //   ]
+    // },
   ],
   [CDK]: [],
 };
