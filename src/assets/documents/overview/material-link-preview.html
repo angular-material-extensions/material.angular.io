@@ -1,0 +1,144 @@
+<html>
+<head></head>
+<body>
+<div class="docs-markdown"><p class="docs-markdown-p">
+
+  <h3 id="progress-mode" class="docs-header-link docs-markdown-h3"><span header-linkheader-link="components"></span>
+    Components
+  </h3>
+
+  <h4
+    id="main" class="docs-header-link docs-markdown-h4"><span header-link="main"></span> Main component
+  </h4>
+
+  <p>
+    <code class="docs-markdown-code">&lt;mat-link-preview&gt;</code>
+    is an Angular UI component built on the top of the progress bar to illustrate and validate a password's strength
+  </p>
+
+  <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code"><span class="hljs-tag">&lt;<span
+    class="hljs-name">mat-link-preview</span><span class="hljs-attr"> [password]</span>=<span class="hljs-string">"password.value"</span>><span
+    class="hljs-tag">&lt;/<span class="hljs-name">mat-link-preview</span>&gt;</span></span></code></pre>
+
+  <p class="docs-markdown-p">This component is usually used in combination with an input html element that represents a
+    password.</p>
+
+  <h5 id="without-validation" class="docs-header-link docs-markdown-h5"><span header-link="without-validation"></span>
+    without
+    validation
+  </h5>
+
+  <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code">
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-form-field</span>
+    <span class="hljs-attr"> appearance</span>=<span class="hljs-string">"outline"</span>
+    <span class="hljs-attr"> [color]</span>=<span class="hljs-string">"passwordComponent.color"</span>>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-label</span>>Password<span class="hljs-tag">&lt;<span
+      class="hljs-name">mat-label</span>&gt;</span></span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr"> matInput</span>
+        <span class="hljs-attr"> required</span>
+        <span class="hljs-attr"> #password</span>
+        <span class="hljs-attr"> [type]</span>=<span class="hljs-string">"inputType"</span>
+        <span class="hljs-attr"> [placeholder]</span>=<span class="hljs-string">"Password"</span><span class="hljs-tag">&gt;</span></span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-hint</span><span class="hljs-attr"> align</span>=<span
+      class="hljs-string">"end"</span><span class="hljs-attr"> aria-live</span>=<span
+      class="hljs-string">"polite"</span>>
+      {{password.value.length}} / 25
+      <span class="hljs-tag">&lt;/<span class="hljs-name">mat-hint</span>&gt;</span></span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mat-form-field</span>&gt;</span></span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-link-preview</span><span
+      class="hljs-attr"> [password]</span>=<span class="hljs-string">"password.value"</span>><span class="hljs-tag">&lt;/<span
+      class="hljs-name">mat-password-strength</span>&gt;</span></span>
+
+  </code></pre>
+
+  <h5 id="with-validation" class="docs-header-link docs-markdown-h5"><span header-link="with-validation"></span>
+    with validation
+  </h5>
+
+  <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code">
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-form-field</span>
+    <span class="hljs-attr"> appearance</span>=<span class="hljs-string">"outline"</span>
+    <span class="hljs-attr"> [color]</span>=<span class="hljs-string">"passwordComponent.color"</span>>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-label</span>>Password<span class="hljs-tag">&lt;<span
+      class="hljs-name">mat-label</span>&gt;</span></span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr"> matInput</span>
+        <span class="hljs-attr"> required</span>
+        <span class="hljs-attr"> #passwordWithValidation</span>
+        <span class="hljs-attr"> [type]</span>=<span class="hljs-string">"inputType"</span>
+        <span class="hljs-attr"> [formControl]</span>=<span class="hljs-string">"passwordComponentWithValidation.passwordFormControl"</span>
+        <span class="hljs-attr"> [placeholder]</span>=<span class="hljs-string">"Password"</span><span class="hljs-tag">&gt;</span></span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-hint</span><span class="hljs-attr"> align</span>=<span
+      class="hljs-string">"end"</span><span class="hljs-attr"> aria-live</span>=<span
+      class="hljs-string">"polite"</span>>
+      {{passwordWithValidation.value.length}} / 25
+      <span class="hljs-tag">&lt;/<span class="hljs-name">mat-hint</span>&gt;</span></span>
+
+       <span class="hljs-tag">&lt;<span class="hljs-name">mat-error</span><span class="hljs-attr"> *ngIf</span>=<span
+         class="hljs-string">"passwordComponentWithValidation.passwordFormControl.hasError('required')"</span>>
+        Password is required
+         <span class="hljs-tag">&lt;/<span class="hljs-name">mat-error</span>&gt;</span></span>
+
+       <span class="hljs-tag">&lt;<span class="hljs-name">mat-error</span><span class="hljs-attr"> *ngIf</span>=<span
+         class="hljs-string">"passwordComponentWithValidation.passwordFormControl.hasError('pattern')"</span>>
+        Password is not valid
+      <span class="hljs-tag">&lt;/<span class="hljs-name">mat-error</span>&gt;</span></span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mat-form-field</span>&gt;</span></span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mat-password-strength</span><span class="hljs-attr"> #passwordComponentWithValidation</span><span
+      class="hljs-attr"> [password]</span>=<span class="hljs-string">"passwordWithValidation.value"</span>><span
+      class="hljs-tag">&lt;/<span lass="hljs-name">mat-password-strength</span>&gt;</span></span>
+
+  </code></pre>
+
+  <p class="docs-markdown-p"><code class="docs-markdown-code">&lt;mat-password-strength&gt;</code> offers additionally
+    an event
+    that will be fired every time the strength of the component changes</p>
+
+  <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code"><span class="hljs-tag">&lt;<span
+    class="hljs-name">mat-password-strength</span><span class="hljs-attr"> [password]</span>=<span class="hljs-string">"password.value"</span>
+    <span class="hljs-attr"> (onStrengthChanged)</span>=<span
+      class="hljs-string">"onStrengthChanged($event)"</span> </span>
+    <span class="hljs-tag">&lt;/<span
+      class="hljs-name">mat-password-strength</span>&gt;</span></span></code></pre>
+
+  <h4
+    id="info" class="docs-header-link docs-markdown-h4"><span header-link="info"></span> Info component
+  </h4>
+
+  <p>
+    <code class="docs-markdown-code">&lt;mat-password-strength-info&gt;</code>
+    is a material card that provide information about the strength of a password (developed to be used with the above
+    component).
+  </p>
+
+  <pre class="docs-markdown-pre"><code class="lang-html docs-markdown-code">
+
+    <span class="hljs-tag">&lt;<span
+      class="hljs-name">mat-password-strength</span><span
+      class="hljs-attr"> #passwordComponentWithValidation</span><span class="hljs-attr"> [password]</span>=<span
+      class="hljs-string">"password.value"</span>><span
+      class="hljs-tag">&lt;/<span class="hljs-name">mat-password-strength</span>&gt;</span></span>
+
+    <span class="hljs-tag">&lt;<span
+      class="hljs-name">mat-password-strength-info</span><span class="hljs-attr"> [passwordComponent]</span>=<span
+      class="hljs-string">"passwordComponentWithValidation"</span>>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">mat-password-strength-info</span>&gt;</span></span>
+
+  </code></pre>
+
+  <h3 id="accessibility" class="docs-header-link docs-markdown-h3"><span header-link="accessibility"></span>
+    Accessibility</h3>
+  <p class="docs-markdown-p">Each password strength component should be given a meaningful label via <code
+    class="docs-markdown-code">aria-label</code>
+    or <code class="docs-markdown-code">aria-labelledby</code>.</p></div>
+</body>
+</html>
